@@ -1,20 +1,44 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Random User Generator</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <ion-card *ngIf="user">
+    <div class="avatar-container">
+      <ion-img [src]="user.picture.large" alt="Foto Profil"></ion-img>
+    </div>
+    
+    <ion-card-header>
+      <ion-card-title>
+        {{ user.name.first }} {{ user.name.last }}
+      </ion-card-title>
+      <ion-card-subtitle>{{ user.email }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Lokasi:</strong> {{ user.location.city }}, {{ user.location.country }}</p>
+      <p><strong>Telp:</strong> {{ user.phone }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="!user && !isLoading" class="placeholder">
+    <p>Tekan tombol di bawah untuk mencari user baru.</p>
   </div>
+
+  <div class="ion-margin-top">
+    <ion-button expand="block" (click)="generateUser()" [disabled]="isLoading">
+      
+      <ng-container *ngIf="isLoading">
+        <ion-spinner name="crescent"></ion-spinner>
+        <span class="ion-margin-start">Sedang Mencari...</span>
+      </ng-container>
+
+      <span *ngIf="!isLoading">Cari User Random</span>
+      
+    </ion-button>
+  </div>
+
 </ion-content>
