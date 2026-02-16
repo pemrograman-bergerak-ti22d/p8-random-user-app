@@ -100,7 +100,6 @@ Berikut contoh tampilan aplikasi saat menampilkan profil user acak:
     │   ├── app/
     │   │   ├── services/user.service.ts
     │   │   ├── home/
-    │   │   └── components/
     │   └── assets/
     ├── screenshots/
     │   ├── screenshot-1.webp
