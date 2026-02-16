@@ -85,12 +85,12 @@ async loadRandomUser() {
 
 ## 📱 Tampilan Aplikasi
 
-::: {style="display: flex; gap: 20px;"}
-`<img src="screenshots/screenshot-1.webp" alt="Tampilan Utama" width="300"/>`{=html}
-`<img src="screenshots/screenshot-2.webp" alt="Hasil Generate User" width="300"/>`{=html}
-:::
+Berikut beberapa contoh tampilan hasil generate user acak dari Random User API:
 
-> Gambar diambil dari folder `/screenshots`
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0;">
+  <img src="screenshots/screenshot-1.webp"  alt="Hasil generate user 1"  width="100%" loading="lazy">
+  <img src="screenshots/screenshot-2.webp"  alt="Hasil generate user 2"  width="100%" loading="lazy">
+</div>
 
 ------------------------------------------------------------------------
 
